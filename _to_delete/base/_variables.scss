@@ -1,0 +1,42 @@
+// Font size
+// ––––––––––––––––––––––––––––––––––––––––––––––––––
+$font-size-xs: 0.5rem;
+$font-size-sm: 0.75rem;
+$font-size-base: 1rem;
+$font-size-md: 1.25rem;
+$font-size-lg: 2rem;
+$font-size-xl: 3rem;
+// $font-size-xxl: 6.5rem;
+
+// $font-size-xs: calc(.5rem + 1vw);
+// $font-size-sm: calc(.75rem + 1vw);
+// $font-size-base: calc(1rem + 1vw);
+// $font-size-md: calc(1.5rem + 1vw);
+// $font-size-lg: calc(2.5rem + 1vw);
+// $font-size-xl: calc(4rem + 2vw);
+
+// Font color
+// ––––––––––––––––––––––––––––––––––––––––––––––––––
+$font-color-base: #111111;
+$font-color-light: #757575;
+
+// Font family
+// ––––––––––––––––––––––––––––––––––––––––––––––––––
+// $font-primary: "Poppins", Arial, sans-serif;
+// $font-secondary: "Montserrat", Arial, sans-serif;
+
+// Color
+// ––––––––––––––––––––––––––––––––––––––––––––––––––
+$white: #fff;
+$black: #000000;
+$color-primary: #ff4141;
+$color-secondary: #342b22;
+
+// $color-initial: #fff;
+// $color-primary: #e28f30;
+// $color-secondary: #606c76;
+// $color-tertiary: #f4f5f6;
+// $color-quaternary: #d1d1d1;
+// $color-quinary: #e1e1e1;
+
+$font-path: "fonts" !default;

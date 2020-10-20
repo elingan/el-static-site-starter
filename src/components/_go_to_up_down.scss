@@ -1,0 +1,68 @@
+.go-to-down {
+  visibility: hidden;
+  position: absolute;
+  bottom: 4rem;
+  right: 2rem;
+  z-index: 100;
+  opacity: .5;
+  cursor: pointer;
+  &:hover {
+    opacity: 1;
+  }
+
+
+  .arrow-down {
+    border: solid white;
+    border-radius: 2px;
+    border-width: 0 3px 3px 0;
+    padding: 0.5rem;
+    margin-bottom: -0.5rem;
+    transform: rotate(45deg);
+    animation: blink 10s infinite;
+    &:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+    &:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+  }
+
+  @keyframes blink {
+    0% {
+      opacity: .1;
+    }
+    25% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+}
+
+.go-to-up {
+  visibility: hidden;
+  position: fixed;
+  bottom: 4rem;
+  right: 2rem;
+  z-index: 100;
+  background-color: darken($color-primary, 25);
+  padding: 1rem .75rem .25rem;
+  border-radius: 5px;
+  opacity: 0.7;
+  cursor: pointer;
+  &:hover {
+    opacity: .9;
+  }
+
+  .arrow-up {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    border: solid white;
+    border-radius: 2px;
+    border-width: 0 3px 3px 0;
+    transform: rotate(225deg);
+  }
+}

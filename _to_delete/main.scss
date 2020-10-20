@@ -1,0 +1,46 @@
+@import "../../node_modules/normalize.css/normalize";
+
+.container {
+  text-align: center;
+}
+
+nav {
+  padding: 2rem;
+  text-align: center;
+  a {
+    padding: 0.5rem;
+  }
+}
+
+header {
+  padding: 4rem;
+}
+
+main {
+  padding: 2rem;
+}
+
+footer {
+  padding: 4rem;
+}
+
+sumaq-copyright {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+}
+
+sumaq-creator {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+}
+
+sumaq-screen-size {
+  position: absolute;
+  top: 0.25rem;
+  left: 0;
+  right: 0;
+  opacity: 0.25;
+  text-align: center;
+}

@@ -1,0 +1,17 @@
+meta:
+  title: Sumaq Static Site Generator
+  description: This is a simple static websites generator with Gulp, Pug, Stylus, Yaml, BrowserSync, etc. for publish to S3.
+  keywords: 'sumaq, static, websites, builder, generator, github, aws s3'
+creator:
+  text: 'Made with ❤ by a'
+  name: Eduardo Lingán
+  link: https://elingan.com
+menu:
+  home:
+    name: Homepage
+    description: Homepage description
+    link: '/'
+  about:
+    name: About
+    description: About us description
+    link: '/about'

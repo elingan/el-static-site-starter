@@ -1,0 +1,226 @@
+/**
+ * https://medium.com/codeartisan/breakpoints-and-media-queries-in-scss-46e8f551e2f2
+ * https://www.mydevice.io/
+ * https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries
+ * https://developers.google.com/web/fundamentals/design-and-ux/responsive
+ * http://devfacts.com/media-queries-breakpoints-2020/
+ * https://www.browserstack.com/guide/ideal-screen-sizes-for-responsive-design
+ */
+
+$small-breakpoint: 640px; // Small tablets and large smartphones
+$medium-breakpoint: 960px; // Small tablets and large smartphones
+$large-breakpoint: 1280px; // Small tablets
+$widescreen-breakpoint: 1920px; // Extra large laptops and desktops
+
+@mixin landscape {
+  @media (orientation: landscape) {
+    @content;
+  }
+}
+
+@mixin small-devices {
+  @media (min-width: #{$small-breakpoint}) {
+    @content;
+  }
+}
+
+@mixin small-devices-landscape {
+  @media (min-width: #{$small-breakpoint}) and (orientation: landscape) {
+    @content;
+  }
+}
+
+@mixin medium-devices {
+  @media (min-width: #{$medium-breakpoint}) {
+    @content;
+  }
+}
+@mixin medium-devices-landscape {
+  @media (min-width: #{$medium-breakpoint}) and (orientation: landscape) {
+    @content;
+  }
+}
+
+@mixin large-devices {
+  @media (min-width: #{$large-breakpoint}) {
+    @content;
+  }
+}
+
+@mixin widescreen-devices {
+  @media (min-width: #{$widescreen-breakpoint}) {
+    @content;
+  }
+}
+
+
+
+
+$screen-xs-min: 568px; // Small tablets and large smartphones
+$screen-sm-min: 768px; // Small tablets
+$screen-md-min: 1024px; // Tablets and small laptops
+$screen-lg-min: 1366px; // Large laptops and desktops
+$screen-xl-min: 1920px; // Extra large laptops and desktops
+
+// mobile landscape
+@mixin screen-mobile-landscape {
+  @media (max-width: #{$screen-xs-min - 1}) and (orientation: landscape) {
+    @content;
+  }
+}
+
+// Small devices
+@mixin screen-xs {
+  @media (min-width: #{$screen-xs-min}) {
+    @content;
+  }
+}
+
+// Small devices landscape
+@mixin screen-xs-landscape {
+  @media (min-width: #{$screen-xs-min}) and (orientation: landscape) {
+    @content;
+  }
+}
+
+// Medium devices
+@mixin screen-sm {
+  @media (min-width: #{$screen-sm-min}) {
+    @content;
+  }
+}
+// Medium devices landscape
+@mixin screen-sm-landscape {
+  @media (min-width: #{$screen-sm-min}) and (orientation: landscape) {
+    @content;
+  }
+}
+
+// Large devices
+@mixin screen-md {
+  @media (min-width: #{$screen-md-min}) {
+    @content;
+  }
+}
+
+// Extra large devices
+@mixin screen-lg {
+  @media (min-width: #{$screen-lg-min}) {
+    @content;
+  }
+}
+
+// Extra large devices
+@mixin screen-xl {
+  @media (min-width: #{$screen-xl-min}) {
+    @content;
+  }
+}
+
+// Custom devices
+@mixin screen-rwd($screen) {
+  @media (min-width: $screen+'px') {
+      @content;
+  }
+}
+
+
+
+
+/**
+ * Responsive test
+ */
+.responsive {
+  color: gray;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  text-align: center;
+  opacity: 0.5;
+  z-index: 1000;
+  p {
+    margin: 0;
+  }
+}
+
+
+.mobile-landscape, .xs, .xs-landscape, .sm, .sm-landscape, .md, .lg, .xl {
+  display: none;
+}
+
+
+@include screen-mobile-landscape {
+  .mobile-first {
+    display: none;
+  }
+  .mobile-landscape {
+    display: block;
+  }
+}
+
+@include screen-xs {
+  .mobile-first, .xs-landscape {
+    display: none;
+  }
+  .xs {
+    display: block;
+  }
+}
+
+@include screen-xs-landscape {
+  .mobile-first, .xs {
+    display: none;
+  }
+  .xs-landscape {
+    display: block;
+  }
+}
+
+@include screen-sm {
+  .mobile-first,
+  .xs, .xs-landscape {
+    display: none;
+  }
+  .sm {
+    display: block;
+  }
+}
+@include screen-sm-landscape {
+  .mobile-first, .xs, .xs-landscape, .sm {
+    display: none;
+  }
+  .sm-landscape {
+    display: block;
+  }
+}
+
+@include screen-md {
+  .responsive  {
+    font-size: $font-size-sm;
+  }
+
+  .mobile-first, .xs, .xs-landscape, .sm, .sm-landscape {
+    display: none;
+  }
+  .md {
+    display: block;
+  }
+}
+
+@include screen-lg {
+  .mobile-first, .xs, .xs-landscape, .sm, .sm-landscape, .md {
+    display: none;
+  }
+  .lg {
+    display: block;
+  }
+}
+
+@include screen-xl {
+  .mobile-first, .xs, .xs-landscape, .sm, .sm-landscape, .md, .lg {
+    display: none;
+  }
+  .xl {
+    display: block;
+  }
+}
