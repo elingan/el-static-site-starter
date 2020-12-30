@@ -1,6 +1,5 @@
 const debug = require('debug')('sumaq:build')
 const dotenv = require('dotenv')
-
 const taskClean = require('./clean')
 const taskCopy = require('./copy')
 const taskMarkups = require('./markups')
@@ -19,9 +18,5 @@ async function buildAll() {
   await taskStyles.build()
   debug('build done!')
 }
-
-// module.exports = buildAll
 // buildAll()
-
 exports.buildAll = buildAll
-buildAll()

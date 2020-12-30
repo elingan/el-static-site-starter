@@ -1,4 +1,6 @@
-# Sumaq Static Site Starter basado en [HTML5 Boilerplate](https://h5bp.org/)
+# In Progress
+
+# Static Site Starter basado en [HTML5 Boilerplate](https://h5bp.org/)
 
 Esto es plantilla para generar sitios web estáticos con las siguientes características:
 

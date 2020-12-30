@@ -16,23 +16,26 @@ process.env.NODE_ENV = (process.env.NODE_ENV === 'production') ? process.env.NOD
 watch([
   `${process.env.DIR_SRC}/`,
   `${process.env.DIR_SRC}/includes/`,
-  `${process.env.DIR_SRC}/components/`,
+  `${process.env.DIR_SRC}/includes/components/`,
   `${process.env.DIR_SRC}/data/`
-], { resursive: true, filter: /\.(pug|yaml)$/ }, taskMarkups.build)
+], { resursive: true, filter: /\.(yaml|pug)$/ }, taskMarkups.build)
 watch([
   `${process.env.DIR_SRC}/scripts/`,
-  `${process.env.DIR_SRC}/components/`
 ], { resursive: true, filter: /\.(js)$/ }, taskScripts.build)
 watch([
   `${process.env.DIR_SRC}/`,
   `${process.env.DIR_SRC}/includes/`,
+  `${process.env.DIR_SRC}/includes/components/`,
   `${process.env.DIR_SRC}/styles/`,
-  `${process.env.DIR_SRC}/components/`
+  `${process.env.DIR_SRC}/styles/components/`
 ], { resursive: true, filter: /\.(css|pug)$/ }, taskStyles.build)
+
 
 async function main() {
   await builder.buildAll()
-  await startDevServer({
+  const server = await startDevServer({
+    // logStartMessage: false,
+    // autoExitProcess: true,
     config: {
       watch: true,
       // open: true,
@@ -52,6 +55,7 @@ async function main() {
       // ]
     }
   })
+  // console.log(`https://${server.config.hostname}:${server.config.port}`)
 }
 
 main()

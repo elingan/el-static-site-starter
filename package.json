@@ -4,9 +4,10 @@
   "description": "Static Site Generator with TailwindCSS",
   "main": "index.js",
   "scripts": {
-    "start": "npm run dev",
+    "start": "DEBUG=sumaq* node ./tasks/webserver.js",
     "dev": "DEBUG=sumaq* node ./tasks/webserver.js",
-    "build": "DEBUG=sumaq*  NODE_ENV=production node ./tasks/build.js",
+    "server": "wds -c ./tasks/_config.js",
+    "build": "DEBUG=sumaq*  NODE_ENV=production node -e 'require(\"./tasks/build.js\").buildAll()'",
     "publish": "npm run build && netlify deploy --dir=dist --prod --message \"Manual deploy from npm\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -30,7 +31,6 @@
     "postcss-discard-comments": "^4.0.2",
     "postcss-import": "^12.0.1",
     "postcss-nested": "^5.0.1",
-    "precss": "^4.0.0",
     "pug": "^3.0.0",
     "rollup": "^2.32.0",
     "rollup-plugin-cleanup": "^3.2.1",

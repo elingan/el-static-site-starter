@@ -1,0 +1,5 @@
+mixin copyright(text)
+  - const year = new Date().getFullYear()
+  p.copyright © #{year} #{text}
+
++copyright(copyright.text)

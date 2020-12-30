@@ -41,4 +41,3 @@ function buildPage(page, data) {
   fs.writeFileSync(htmlFile, output)
 }
 exports.build = build
-// build()
